@@ -28,13 +28,16 @@ Fill this out **before** the class begins.
 
 ### 2 · Open the Notebook & Watch the Guide Video
 
-> Click the link below → **File → Save a copy in Drive** → work on your own copy.
-
-Watch the guide video first to see how the notebook works, then try it yourself.
+> Click one of the links below to open the notebook, then watch the guide video.
 
 ▶ [Day 1 Guide Video](#) *(link pending)*
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/colombo0718/rl-lab-group-b/blob/master/RL_Day1_RR.ipynb)
+| Environment | Link |
+|---|---|
+| Google Colab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/colombo0718/rl-lab-group-b/blob/master/RL_Day1_RR.ipynb) |
+| Binder (Jupyter) | [![Launch Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/colombo0718/rl-lab-group-b/master?filepath=RL_Day1_RR.ipynb) |
+
+> **Colab**: requires Google account · **Binder**: no login needed, may take ~1–2 min to start
 
 ---
 
@@ -52,7 +55,12 @@ Watch the guide video first to see how the notebook works, then try it yourself.
 
 ▶ [Day 2 Guide Video](#) *(link pending)*
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/colombo0718/rl-lab-group-b/blob/master/RL_Day2_RR.ipynb)
+| Environment | Link |
+|---|---|
+| Google Colab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/colombo0718/rl-lab-group-b/blob/master/RL_Day2_RR.ipynb) |
+| Binder (Jupyter) | [![Launch Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/colombo0718/rl-lab-group-b/master?filepath=RL_Day2_RR.ipynb) |
+
+> **Colab**: requires Google account · **Binder**: no login needed, may take ~1–2 min to start
 
 ### Day 2 Tasks
 
