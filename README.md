@@ -34,8 +34,8 @@ Fill this out **before** the class begins.
 
 | Environment | Link |
 |---|---|
-| Google Colab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/colombo0718/rl-lab-group-b/blob/master/RL_Day1_RR.ipynb) |
-| Binder (Jupyter) | [![Launch Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/colombo0718/rl-lab-group-b/master?filepath=RL_Day1_RR.ipynb) |
+| Google Colab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/colombo0718/rl-lab-group-b/blob/master/RL_Day1.ipynb) |
+| Binder (Jupyter) | [![Launch Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/colombo0718/rl-lab-group-b/master?filepath=RL_Day1.ipynb) |
 
 > **Colab**: requires Google account · **Binder**: no login needed, may take ~1–2 min to start
 
@@ -57,8 +57,8 @@ Fill this out **before** the class begins.
 
 | Environment | Link |
 |---|---|
-| Google Colab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/colombo0718/rl-lab-group-b/blob/master/RL_Day2_RR.ipynb) |
-| Binder (Jupyter) | [![Launch Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/colombo0718/rl-lab-group-b/master?filepath=RL_Day2_RR.ipynb) |
+| Google Colab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/colombo0718/rl-lab-group-b/blob/master/RL_Day2.ipynb) |
+| Binder (Jupyter) | [![Launch Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/colombo0718/rl-lab-group-b/master?filepath=RL_Day2.ipynb) |
 
 > **Colab**: requires Google account · **Binder**: no login needed, may take ~1–2 min to start
 
