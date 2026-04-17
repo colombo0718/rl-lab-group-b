@@ -19,7 +19,7 @@ Fill this out **before** the class begins.
 ## Day 1
 
 ### 1 · What is RL — SAR Loop & Episode
-▶ [Watch Video](#) *(link pending)*
+▶ [Watch Video](https://www.youtube.com/watch?v=g5SFtsTAv4I)
 
 ---
 
@@ -36,7 +36,7 @@ Fill this out **before** the class begins.
 ---
 
 ### 3 · How Agents Decide — ε-greedy & Hyperparameters (α, γ, ε)
-▶ [Watch Video](#) *(link pending)*
+▶ [Watch Video](https://www.youtube.com/watch?v=GrPdk2d9KVA)
 
 ---
 
@@ -59,7 +59,7 @@ Fill this out **before** the class begins.
 ---
 
 ### 6 · How Agents Learn — Q-table & Update Rule
-▶ [Watch Video](#) *(link pending)*
+▶ [Watch Video](https://www.youtube.com/watch?v=lwEo9spItjs)
 
 ---
 
@@ -73,7 +73,7 @@ Fill this out **before** the class begins.
 ## Day 2
 
 ### 8 · Reading the Q-table Heatmap
-▶ [Watch Video](#) *(link pending)*
+▶ [Watch Video](https://www.youtube.com/watch?v=Sesod0K4wjc)
 
 ---
 
@@ -91,7 +91,7 @@ Fill this out **before** the class begins.
 ---
 
 ### 10 · Reading Training Curves
-▶ [Watch Video](#) *(link pending)*
+▶ [Watch Video](https://www.youtube.com/watch?v=6crIH-kT-bA)
 
 ---
 
@@ -105,7 +105,7 @@ Fill this out **before** the class begins.
 ---
 
 ### 12 · Continuous State & Discretization
-▶ [Watch Video](#) *(link pending)*
+▶ [Watch Video](https://www.youtube.com/watch?v=Z67UnKtgBH4)
 
 ---
 
