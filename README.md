@@ -10,7 +10,7 @@ Follow the steps **in order** during each class session.
 
 | | |
 |---|---|
-| 📝 Pre-test | [Open Form](#) *(link pending)* |
+| 📝 Pre-test | [Open Form](https://docs.google.com/forms/d/e/1FAIpQLSe5YRnWo3_LvMeY2SMIH2aWcCHqlKeVQ-MnomDkF7_UfmjQpw/viewform) |
 
 Fill this out **before** the class begins.
 
@@ -34,7 +34,7 @@ Watch the guide video first to see how the notebook works, then try it yourself.
 
 ▶ [Day 1 Guide Video](#) *(link pending)*
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/colombo0718/rl-lab-group-b/blob/main/RL_Day1_RR.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/colombo0718/rl-lab-group-b/blob/master/RL_Day1_RR.ipynb)
 
 ---
 
@@ -52,7 +52,7 @@ Watch the guide video first to see how the notebook works, then try it yourself.
 
 ▶ [Day 2 Guide Video](#) *(link pending)*
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/colombo0718/rl-lab-group-b/blob/main/RL_Day2_RR.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/colombo0718/rl-lab-group-b/blob/master/RL_Day2_RR.ipynb)
 
 ### Day 2 Tasks
 
@@ -67,7 +67,7 @@ Watch the guide video first to see how the notebook works, then try it yourself.
 
 | | |
 |---|---|
-| 📝 Post-test | [Open Form](#) *(link pending)* |
+| 📝 Post-test | [Open Form](https://docs.google.com/forms/d/e/1FAIpQLSeFZVhhsdw2OnFYRc1lSmJutpAliz5Z1sgw7UW5KG_juJpXsQ/viewform) |
 
 Fill this out **before leaving** the classroom.
 
