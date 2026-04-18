@@ -63,25 +63,14 @@ Fill this out **before** the class begins.
 
 ---
 
-### 7 · Maze 2D — First Look
-
-| Environment | Link |
-|---|---|
-| Google Colab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/colombo0718/rl-lab-group-b/blob/master/RL_Day1.ipynb) |
-| Binder (Jupyter) | [![Launch Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/colombo0718/rl-lab-group-b/master?filepath=RL_Day1.ipynb) |
-
-> Start the agent and observe. We'll go deeper next class.
-
----
-
-### 8 · Reading the Q-table Heatmap
+### 7 · Reading the Q-table Heatmap
 ▶ [Watch Video V3](https://www.youtube.com/watch?v=Sesod0K4wjc)
 
 ---
 
 ## Day 2
 
-### 9 · Maze 2D — Deep Dive
+### 8 · Maze 2D — Deep Dive
 ▶ [Watch Demo B3](#) *(link pending)*
 
 | Environment | Link |
@@ -95,12 +84,12 @@ Fill this out **before** the class begins.
 
 ---
 
-### 10 · Reading Training Curves
+### 9 · Reading Training Curves
 ▶ [Watch Video V4](https://www.youtube.com/watch?v=6crIH-kT-bA)
 
 ---
 
-### 11 · Heli — Helicopter
+### 10 · Heli — Helicopter
 ▶ [Watch Demo B4](#) *(link pending)*
 
 | Task | |
@@ -109,12 +98,12 @@ Fill this out **before** the class begins.
 
 ---
 
-### 12 · Continuous State & Discretization
+### 11 · Continuous State & Discretization
 ▶ [Watch Video V5](https://www.youtube.com/watch?v=Z67UnKtgBH4)
 
 ---
 
-### 13 · Fighter *(optional challenge)*
+### 12 · Fighter *(optional challenge)*
 ▶ [Watch Demo B5](#) *(link pending)*
 
 ---
