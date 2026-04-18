@@ -24,7 +24,7 @@ Fill this out **before** the class begins.
 ---
 
 ### 2 · Jupyter Notebook Guide
-▶ [Watch Video](#) *(link pending)*
+▶ [Watch Video](https://www.youtube.com/watch?v=JM27n2Zs5QA)
 
 | Environment | Link |
 |---|---|
