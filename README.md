@@ -64,20 +64,25 @@ Fill this out **before** the class begins.
 ---
 
 ### 7 · Maze 2D — First Look
-▶ [Watch Demo B3](#) *(link pending)*
+
+| Environment | Link |
+|---|---|
+| Google Colab | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/colombo0718/rl-lab-group-b/blob/master/RL_Day1.ipynb) |
+| Binder (Jupyter) | [![Launch Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/colombo0718/rl-lab-group-b/master?filepath=RL_Day1.ipynb) |
 
 > Start the agent and observe. We'll go deeper next class.
 
 ---
-
-## Day 2
 
 ### 8 · Reading the Q-table Heatmap
 ▶ [Watch Video V3](https://www.youtube.com/watch?v=Sesod0K4wjc)
 
 ---
 
+## Day 2
+
 ### 9 · Maze 2D — Deep Dive
+▶ [Watch Demo B3](#) *(link pending)*
 
 | Environment | Link |
 |---|---|
