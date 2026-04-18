@@ -59,7 +59,8 @@ Fill this out **before** the class begins.
 
 | Task | |
 |------|---|
-| T2 · Point out the **state / action / reward / episode** in this game. | |
+| T2a · Point out the **state / action / reward / episode** in this game. | |
+| T2b · Pick any cell in the Q-table. Explain how its value was updated from the previous step. | |
 
 ---
 
