@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Intro to RL — Group B</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;
+    background:#0d1117; color:#e6edf3;
+    overflow:hidden; height:100vh;
+  }
+  .slide {
+    display:none; width:100vw; height:100vh;
+    position:absolute; top:0; left:0;
+    align-items:center; justify-content:center;
+    flex-direction:column; padding:56px 80px;
+  }
+  .slide.active { display:flex; }
+
+  /* ── common ── */
+  .tag {
+    font-size:12px; letter-spacing:3px; text-transform:uppercase;
+    color:#58a6ff; font-weight:600; margin-bottom:24px;
+  }
+  .slide-label {
+    font-size:12px; letter-spacing:3px; text-transform:uppercase;
+    color:#58a6ff; font-weight:600; margin-bottom:16px; align-self:flex-start;
+  }
+  .slide-title {
+    font-size:38px; font-weight:700; color:#fff;
+    margin-bottom:44px; align-self:flex-start;
+  }
+  .divider { width:56px; height:3px; background:#58a6ff; margin-bottom:36px; }
+
+  /* ── Slide 1 Title ── */
+  #s1 { background:linear-gradient(135deg,#0d1117 0%,#161b22 60%,#0d2137 100%); }
+  .title-en { font-size:58px; font-weight:700; line-height:1.1; color:#fff; margin-bottom:10px; }
+  .title-zh { font-size:28px; font-weight:300; color:#8b949e; margin-bottom:44px; letter-spacing:4px; }
+  .meta-name { font-size:22px; font-weight:600; color:#e6edf3; }
+  .meta-role { font-size:15px; color:#8b949e; margin-top:4px; }
+  .meta-course { font-size:13px; color:#58a6ff; margin-top:8px; letter-spacing:1px; }
+  .dates { position:absolute; bottom:40px; right:80px; text-align:right; font-size:13px; color:#484f58; line-height:1.9; }
+  .group-badge {
+    position:absolute; top:40px; right:80px;
+    background:#388bfd22; border:1px solid #388bfd66;
+    color:#58a6ff; font-size:12px; font-weight:700;
+    letter-spacing:2px; padding:6px 16px; border-radius:20px;
+  }
+
+  /* ── Slide 2 Overview ── */
+  #s2 { background:#0d1117; }
+  .days-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; width:100%; max-width:860px; }
+  .day-card { background:#161b22; border:1px solid #30363d; border-radius:12px; padding:28px 32px; }
+  .day-card.day2 { border-color:#388bfd44; }
+  .day-header { font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#8b949e; margin-bottom:6px; }
+  .day-date { font-size:20px; font-weight:700; color:#58a6ff; margin-bottom:20px; }
+  .task-list { list-style:none; display:flex; flex-direction:column; gap:12px; }
+  .task-item { display:flex; align-items:flex-start; gap:12px; }
+  .task-id {
+    background:#21262d; color:#58a6ff; font-size:10px; font-weight:700;
+    padding:3px 7px; border-radius:4px; white-space:nowrap; margin-top:2px; letter-spacing:1px;
+  }
+  .task-name { font-size:15px; color:#c9d1d9; line-height:1.3; }
+  .task-sub { font-size:11px; color:#484f58; margin-top:2px; }
+  .optional-badge {
+    font-size:9px; background:#388bfd22; color:#58a6ff;
+    border:1px solid #388bfd44; border-radius:3px; padding:1px 5px; margin-left:5px;
+  }
+
+  /* ── Slide 3 Poll ── */
+  #s3 { background:#0d1117; }
+  .poll-question {
+    font-size:42px; font-weight:700; color:#fff;
+    text-align:center; line-height:1.3; margin-bottom:16px; max-width:800px;
+  }
+  .poll-sub { font-size:18px; color:#8b949e; margin-bottom:52px; text-align:center; }
+  .poll-options { display:flex; gap:24px; }
+  .poll-card {
+    background:#161b22; border:2px solid #30363d; border-radius:16px;
+    padding:32px 36px; text-align:center; flex:1; min-width:200px;
+    transition:border-color 0.2s;
+  }
+  .poll-card:hover { border-color:#58a6ff; cursor:default; }
+  .poll-emoji { font-size:44px; margin-bottom:16px; }
+  .poll-text { font-size:17px; font-weight:600; color:#e6edf3; line-height:1.4; }
+  .poll-hint { font-size:12px; color:#484f58; margin-top:28px; text-align:center; letter-spacing:1px; }
+
+  /* ── Slide 4 What is RL ── */
+  #s4 { background:#0d1117; }
+  .rl-diagram { display:flex; align-items:center; justify-content:center; margin:36px 0 28px; width:100%; }
+  .box { background:#161b22; border:2px solid #30363d; border-radius:14px; padding:24px 36px; text-align:center; min-width:170px; }
+  .box-icon { font-size:38px; margin-bottom:8px; }
+  .box-label { font-size:17px; font-weight:700; color:#e6edf3; }
+  .box-sub { font-size:12px; color:#8b949e; margin-top:3px; }
+  .box.agent { border-color:#58a6ff; }
+  .box.env   { border-color:#3fb950; }
+  .arrow-group { display:flex; flex-direction:column; align-items:center; gap:16px; width:180px; padding:0 8px; }
+  .arrow-row { display:flex; align-items:center; width:100%; }
+  .arrow-line { height:2px; flex:1; }
+  .arrow-line.action   { background:#58a6ff; }
+  .arrow-line.feedback { background:#3fb950; }
+  .arrow-label { font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; text-align:center; }
+  .arrow-label.action   { color:#58a6ff; }
+  .arrow-label.feedback { color:#3fb950; }
+  .rl-tagline { font-size:19px; color:#8b949e; text-align:center; max-width:680px; line-height:1.8; }
+  .rl-tagline strong { color:#e6edf3; }
+
+  /* ── Slide 5 Repo QR ── */
+  #s5 { background:#0d1117; }
+  .qr-layout { display:flex; align-items:center; gap:64px; margin-top:8px; }
+  .qr-box {
+    background:#ffffff; border-radius:16px; padding:20px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .qr-info { display:flex; flex-direction:column; gap:20px; }
+  .qr-url {
+    font-size:28px; font-weight:700; color:#58a6ff;
+    word-break:break-all; max-width:480px;
+  }
+  .qr-instruction { font-size:16px; color:#8b949e; line-height:1.8; }
+  .qr-instruction strong { color:#e6edf3; }
+  .what-find { display:flex; flex-direction:column; gap:8px; margin-top:4px; }
+  .find-item { display:flex; align-items:center; gap:10px; font-size:14px; color:#8b949e; }
+  .find-dot { width:6px; height:6px; background:#58a6ff; border-radius:50%; flex-shrink:0; }
+
+  /* ── Nav ── */
+  .nav { position:fixed; bottom:28px; right:36px; display:flex; gap:10px; z-index:100; }
+  .nav-btn {
+    background:#21262d; border:1px solid #30363d; color:#8b949e;
+    padding:9px 18px; border-radius:6px; font-size:13px; cursor:pointer; transition:all 0.15s;
+  }
+  .nav-btn:hover { background:#30363d; color:#e6edf3; }
+  .slide-counter { position:fixed; bottom:34px; left:36px; font-size:12px; color:#484f58; letter-spacing:1px; }
+</style>
+</head>
+<body>
+
+<!-- ═══ 1 · Title ═══ -->
+<div class="slide active" id="s1">
+  <div class="group-badge">GROUP B · COLAB</div>
+  <div class="tag">CS522 · 互動視訊遊戲設計 · 元智大學 資工系</div>
+  <div class="title-en">Introduction to<br>Reinforcement Learning</div>
+  <div class="title-zh">強化學習概論</div>
+  <div class="divider"></div>
+  <div>
+    <div class="meta-name">Colombo Chao</div>
+    <div class="meta-role">AI Engineer · 全葳軟體資訊有限公司</div>
+    <div class="meta-course">Graduate Researcher · Yuan Ze University</div>
+  </div>
+  <div class="dates">
+    Day 1 · April 21 · 14:10 – 17:00<br>
+    Day 2 · April 28 · 14:10 – 17:00
+  </div>
+</div>
+
+<!-- ═══ 2 · Course Overview ═══ -->
+<div class="slide" id="s2">
+  <div class="slide-label">Course Structure</div>
+  <div class="slide-title">Two days. Five tasks. Hands on.</div>
+  <div class="days-grid">
+    <div class="day-card">
+      <div class="day-header">Day 1</div>
+      <div class="day-date">April 21</div>
+      <ul class="task-list">
+        <li class="task-item">
+          <span class="task-id">T1</span>
+          <div><div class="task-name">Multi-Armed Bandit</div><div class="task-sub">Exploration vs Exploitation</div></div>
+        </li>
+        <li class="task-item">
+          <span class="task-id">T2</span>
+          <div><div class="task-name">Maze 1D</div><div class="task-sub">State · Action · Reward · Q-table</div></div>
+        </li>
+        <li class="task-item">
+          <span class="task-id">T3</span>
+          <div><div class="task-name">Maze 2D</div><div class="task-sub">Q-table Heatmap · Policy</div></div>
+        </li>
+      </ul>
+    </div>
+    <div class="day-card day2">
+      <div class="day-header">Day 2</div>
+      <div class="day-date">April 28</div>
+      <ul class="task-list">
+        <li class="task-item">
+          <span class="task-id">T4</span>
+          <div><div class="task-name">Helicopter</div><div class="task-sub">Continuous State · Training Curves</div></div>
+        </li>
+        <li class="task-item">
+          <span class="task-id">T5</span>
+          <div><div class="task-name">Fighter Jet <span class="optional-badge">optional</span></div><div class="task-sub">5D State Space · Free Exploration</div></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3 · Poll ═══ -->
+<div class="slide" id="s3">
+  <div class="poll-question">"Have you studied reinforcement<br>learning before?"</div>
+  <div class="poll-sub">Raise your hand — or just shout it out.</div>
+  <div class="poll-options">
+    <div class="poll-card">
+      <div class="poll-emoji">📚</div>
+      <div class="poll-text">Yes — I've studied<br>RL before</div>
+    </div>
+    <div class="poll-card">
+      <div class="poll-emoji">👂</div>
+      <div class="poll-text">I've heard of it<br>but never tried it</div>
+    </div>
+    <div class="poll-card">
+      <div class="poll-emoji">🫙</div>
+      <div class="poll-text">Completely new<br>to me</div>
+    </div>
+  </div>
+  <div class="poll-hint">↓ &nbsp; either way, you're in the right place &nbsp; ↓</div>
+</div>
+
+<!-- ═══ 4 · What is RL ═══ -->
+<div class="slide" id="s4">
+  <div class="slide-label">Core Concept</div>
+  <div class="slide-title">What is Reinforcement Learning?</div>
+  <div class="rl-diagram">
+    <div class="box agent">
+      <div class="box-icon">🤖</div>
+      <div class="box-label">Agent</div>
+      <div class="box-sub">the learner</div>
+    </div>
+    <div class="arrow-group">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:100%">
+        <div class="arrow-row">
+          <div class="arrow-line action"></div>
+          <span style="color:#58a6ff;font-size:14px;">▶</span>
+        </div>
+        <div class="arrow-label action">Action</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px;width:100%">
+        <div class="arrow-label feedback">State · Reward</div>
+        <div class="arrow-row">
+          <span style="color:#3fb950;font-size:14px;">◀</span>
+          <div class="arrow-line feedback"></div>
+        </div>
+      </div>
+    </div>
+    <div class="box env">
+      <div class="box-icon">🌍</div>
+      <div class="box-label">Environment</div>
+      <div class="box-sub">the world</div>
+    </div>
+  </div>
+  <div class="rl-tagline">
+    The agent <strong>tries things</strong>, receives <strong>rewards or penalties</strong>,<br>
+    and gradually learns which actions lead to better outcomes.
+  </div>
+</div>
+
+<!-- ═══ 5 · Repo + QR ═══ -->
+<div class="slide" id="s5">
+  <div class="slide-label">Get Started</div>
+  <div class="slide-title">Open this on your computer now.</div>
+  <div class="qr-layout">
+    <div class="qr-box">
+      <div id="qrcode"></div>
+    </div>
+    <div class="qr-info">
+      <div class="qr-url">github.com/colombo0718/<br>rl-lab-group-b</div>
+      <div class="qr-instruction">
+        Scan the QR code, or type the URL.<br>
+        This page is your <strong>guide for both days</strong> —<br>
+        keep it open throughout the course.
+      </div>
+      <div class="what-find">
+        <div class="find-item"><div class="find-dot"></div>Demo videos for each task</div>
+        <div class="find-item"><div class="find-dot"></div>Colab / Binder links to open the notebook</div>
+        <div class="find-item"><div class="find-dot"></div>Task instructions</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ Nav ═══ -->
+<div class="slide-counter" id="counter">1 / 5</div>
+<div class="nav">
+  <button class="nav-btn" onclick="prev()">← Prev</button>
+  <button class="nav-btn" onclick="next()">Next →</button>
+</div>
+
+<script>
+  // Generate QR code for Group B repo
+  new QRCode(document.getElementById("qrcode"), {
+    text: "https://github.com/colombo0718/rl-lab-group-b",
+    width: 220, height: 220,
+    colorDark: "#000000", colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.M
+  });
+
+  let current = 0;
+  const slides = document.querySelectorAll('.slide');
+  const counter = document.getElementById('counter');
+
+  function show(n) {
+    slides[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    counter.textContent = (current + 1) + ' / ' + slides.length;
+  }
+  function next() { show(current + 1); }
+  function prev() { show(current - 1); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+  });
+</script>
+</body>
+</html>
