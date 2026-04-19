@@ -39,12 +39,12 @@
 |------|---------|---------|------|
 | 14:10–14:25 | 複習：重播 V2 + B2 Demo 影片 | | |
 | 14:25–14:40 | V3：Reading the Q-table Heatmap | | |
-| 14:40–15:10 | T3：Maze 2D（matplotlib 熱力圖，指出 Start→Goal 路徑） | | |
+| 14:40–15:10 | T3：Maze 2D（Q-table 熱力圖，指出 Start→Goal 路徑） | | |
 | 15:10–15:20 | V4：Reading Training Curves | | |
 | 15:20–15:30 | 休息 | | |
 | 15:30–16:00 | B4 Demo 影片 + T4：Heli（訓練曲線判讀，至少 50 ep） | | |
 | 16:00–16:10 | V5：Continuous State & Discretization | | |
-| 16:10–16:30 | B5 Demo 影片 + T5：延伸自由體驗（選做） | | |
+| 16:10–16:30 | B5 Demo 影片 + T5：Fighter（延伸自由體驗，選做） | | |
 | 16:30–17:00 | 後測問卷（含 NASA-TLX + SUS，30 min） | | |
 
 ---
