@@ -1,284 +1,260 @@
-# 講師講稿 — RL 實驗課 B 組（Colab 版）
+# Instructor Script — RL Lab, Group B (Colab / Jupyter)
 
 > **使用說明**
-> 方括號 `【】` 是你的**動作提示**，不念出來。
-> 引號內文字是**建議講詞**，可照念或自由發揮。
-> 粗體是**關鍵詞**，念慢一點讓學生記住。
+> `【動作】` = 你的行為提示，**不念出來**。
+> 引號內是**口說英文講詞**，可照念或自由調整語氣。
+> **粗體**是需要念慢、讓學生記住的關鍵詞。
 
 ---
 
-## ＝＝ 第一天 ＝＝
+## ══ Day 1 ══
 
 ---
 
-### 🟢 開場（3 分鐘）
+### 🟢 Opening (3 min)
 
-【等學生安靜，站到講台正中，不要急著開口。環視一圈再開始。】
+【站到講台正中，等學生安靜，環視一圈再開口】
 
-「好，我們開始。」
+"Alright, let's get started."
 
-「我知道你們大部分人從來沒學過強化學習，甚至可能不確定今天來這裡要做什麼。沒關係——兩天結束，你會真的**跑過**一個 AI 學習的完整過程，不是看影片，是你自己動手讓它學。」
+"I know most of you have never studied reinforcement learning before — you might not even be sure what today is about. That's completely fine. By the end of these two days, you'll have actually *run* an AI learning process from scratch. Not watching someone else do it — you'll do it yourself."
 
-「這個課程同時是我在做的研究。你們的操作資料、完成狀況，都是我論文的一部分。所以請認真對待每一個任務——你們的表現，真的有意義。」
+"This course is also part of my research. Your work, your completion times, your observations — they're all data for my thesis. So please take each task seriously. What you do here genuinely matters."
 
 【停頓兩秒】
 
-「我們開始。」
+"Okay. Let's go."
 
 ---
 
-### 📋 課程總覽（2 分鐘）
+### 📋 Course Overview (2 min)
 
-【打開白板或簡報，簡單寫出：Day 1 → T1 / T2 / T3 ｜ Day 2 → T4 / T5】
+【白板寫：Day 1 → T1 / T2 / T3 ｜ Day 2 → T4 / T5】
 
-「兩天，五個任務。每個任務都有一段示範影片，我播完你們就去做，做完舉手讓助教確認。」
+"Two days, five tasks. For each one, I'll play a short demo video, then you do the task yourself. When you're done, raise your hand — the TA will come check your work."
 
-「**不需要寫程式**——你們只需要改幾個數字，然後觀察結果。但我要你們真的想清楚：為什麼結果會是這樣。」
+"You don't need to write any code today. You'll change a few numbers, run the cells, and observe what happens. But I want you to actually *think* about why the result looks the way it does."
 
-「問題可以直接問助教，或者舉手問我。沒有蠢問題。」
-
----
-
-### 📌 環境確認（3 分鐘）
-
-【請助教協助確認每人電腦都能開啟 Jupyter Notebook】
-
-「請打開你的 Jupyter Notebook，確認 RL_Day1.ipynb 載入完成。」
-
-「畫面上方看到 Jupyter 的標誌，底部有幾個 code 格，就代表好了。有問題的現在舉手。」
-
-【等 2 分鐘，確認全員 OK】
+"Questions go to the TA, or raise your hand for me. No question is a stupid one."
 
 ---
 
-### 🎯 T1：Multi-Armed Bandit — 探索 vs 利用（25 分鐘）
+### 📌 Environment Check (3 min)
 
-#### 引入（2 分鐘）
+【請助教確認每人可以開啟 Jupyter Notebook / Colab】
 
-「第一個任務，叫做 **Multi-Armed Bandit**，簡稱 MAB。」
+"Please open your Jupyter Notebook and make sure RL_Day1.ipynb is loaded. You should see the Jupyter logo at the top and a few code cells below. If anything isn't loading, raise your hand now."
 
-「想像你走進一間賭場，有很多台吃角子老虎機，但你不知道哪台獎金比較高。你要怎麼決定要一直玩同一台，還是去嘗試別的？這就是**探索 vs 利用**的問題。」
+【等 2 分鐘確認全員就緒】
 
-「強化學習裡最基本的問題之一，就是這個。」
+---
 
-#### 播放示範影片（約 2 分鐘）
+### 🎯 T1 · MAB — Multi-Armed Bandit (25 min)
 
-【打開瀏覽器，播放 B1 影片】
-【連結：https://youtu.be/GbpV4j7cR-Y】
+#### Intro (2 min)
 
-「我先播一段示範，看我怎麼做，然後你們照著操作。」
+"The first task is called **Multi-Armed Bandit** — MAB for short."
 
-【播放影片，不需要額外解說，影片有字幕】
+"Imagine you walk into a casino. There are many slot machines, but you don't know which one pays out the most. How do you decide whether to keep playing the same machine, or try a different one? That tension — between **exploiting** what you already know and **exploring** what you don't — is one of the most fundamental problems in reinforcement learning."
+
+#### 【播放影片】
+
+【全螢幕播放 B1 影片：https://youtu.be/GbpV4j7cR-Y】
+
+【影片結束後繼續說】
+
+"So the key parameter is **ε — epsilon**. ε = 0.9 means the agent explores 90% of the time. ε = 0.1 means it mostly sticks with what it thinks is best. Your task is to run both and compare the reward curves."
+
+"**Task T1**: Run ε = 0.9 and ε = 0.1. Describe the difference in the reward curve. Which one learns better, and why?"
+
+#### 【學生操作，走下講台巡視 18 min】
+
+【卡在「跑不出圖」→ 提示：確認有按 Shift+Enter 執行格子】
+【問「要設多少 ε」→ 說：就這兩個值，一個一個跑】
+【完成的學生 → 追問：Which curve rises faster? What does that tell you about exploration?】
+
+#### Wrap-up (3 min)
+
+"Here's the takeaway: **exploration has a cost, but without exploration there's no learning**. High ε finds better options eventually, but wastes time trying bad ones. Low ε converges fast but might miss something better. Neither is always right — it depends on the problem."
+
+"You'll see this trade-off in every task this week."
+
+---
+
+### 🎯 T2 · Maze 1D — Q-table & Bellman Update (25 min)
+
+#### Intro (2 min)
+
+"Next: a maze. The simplest possible one — a straight line. The agent moves left or right to find the goal."
+
+"This time the agent doesn't just choose actions — it learns to **evaluate positions**. It builds a table of values: for every position, how good is it to be here? That's the **Q-table**."
+
+"Every step produces three things: a **State**, an **Action**, and a **Reward** — S, A, R. You'll see them printed in the output. Your job is to recognize them."
+
+#### 【播放影片】
+
+【播放 B2 影片：https://youtu.be/WRCE0S4DbZg】
 
 【影片結束後】
 
-「好，看到了吧。**ε（epsilon）** 這個參數控制探索機率——ε=0.9 代表 90% 時間在隨機嘗試，ε=0.1 代表大部分時間都選目前最好的選項。」
+"**Task T2**: Find the S, A, R in the output — point them out. Then explain in your own words what the **Bellman update** is doing: how did this step change the Q-value for that position?"
 
-「T1 的任務：**跑 ε=0.9 和 ε=0.1 兩種設定**，觀察獎勵曲線，說明哪個學得比較好，以及為什麼。」
+"No math required. Just explain the logic."
 
-#### 學生操作（18 分鐘）
+#### 【學生操作，巡視 18 min】
 
-【走下講台，在教室走動巡視。不要站在台上等。】
+【看不懂 Q-value slice 圖 → 提示：X-axis is position along the maze. Y-axis is the expected reward from that position going right. Higher = closer to the goal.】
+【問 Bellman 怎麼說 → 提示：The value of this state = immediate reward + discounted best future value. Say that in your own words.】
 
-【若有學生卡在「跑不出圖表」→ 提示：確認有按 Shift+Enter 執行格子】
-【若有學生問「ε 要設什麼」→ 說：你說的那兩個值，一個一個跑看看】
-【若有學生完成 → 引導：兩條曲線相比，哪個上升比較快？為什麼？】
+#### Wrap-up (3 min)
 
-#### 收尾（3 分鐘）
-
-「好，大部分人應該都跑完了。」
-
-「ε=0.9 前期很隨機，但最終可能找到更好的選項。ε=0.1 早早收斂但可能錯過更好的。**沒有絕對答案，看任務需要。**」
-
-「這個概念在接下來每個任務都會出現。記住：**探索要付出代價，但沒有探索就沒有學習。**」
+"**The Bellman equation** is the engine of Q-learning. Every step nudges the Q-value a little closer to the truth. Run enough steps, and the table converges. Everything else in RL — including deep neural networks — is built on this idea."
 
 ---
 
-### 🎯 T2：Maze 1D — Q-table 與 Bellman 更新（25 分鐘）
+### 🎯 T3 · Maze 2D — Q-table Heatmap (30 min)
 
-#### 引入（2 分鐘）
+#### Intro (2 min)
 
-「第二個任務，迷宮。但先從最簡單的：**一維迷宮**，就是一條直線，左右走，找到終點。」
+"Now we go 2D. A grid maze — the agent can move up, down, left, right."
 
-「這次 AI 要學的不只是行動，還要學會**評估每個位置的價值**——這就是 **Q-table**。」
+"Why is this harder? **The state space is much larger.** A 1D maze had maybe 20 positions. A 2D maze has hundreds of cells, and each one needs to be learned separately."
 
-「每走一步，AI 會收到一組資訊：**狀態（S）、行動（A）、獎勵（R）**——你們待會看到輸出，認出這三個東西就對了。」
+"After training, you'll see a **heatmap**: brighter color means the agent thinks that cell is more valuable. Arrows show the preferred action at each cell."
 
-#### 播放示範影片（約 2 分鐘）
+#### 【播放影片】
 
-【播放 B2 影片】
-【連結：https://youtu.be/WRCE0S4DbZg】
+【播放 B3 影片：https://youtu.be/wFAx0JIwvZI】
 
 【影片結束後】
 
-「T2 的任務：**找出輸出中的 S、A、R**，然後解釋 Bellman 方程式在做什麼——簡單說就是：這次的經驗，怎麼更新我對這個位置的評估。」
+"**Task T3**: On the heatmap, trace the path from Start to Goal. Follow the bright cells and arrows. Then explain — why are certain cells brighter than others?"
 
-「不用寫數學式，用自己的話說清楚就好。」
+#### 【學生操作，巡視 23 min】
 
-#### 學生操作（18 分鐘）
+【訓練時間較長，提醒學生等輸出最底部的熱圖出現再截圖】
+【熱圖沒出現 → 前一格還沒跑完，等 kernel 不再顯示 [*]】
+【進階 → 讓學生改 MAZE2D_LEVEL，觀察路徑變化】
 
-【持續巡視。重點是確認學生看到輸出列印的 step/action/reward/done 那行。】
+#### Wrap-up (2 min)
 
-【常見卡關：看不懂 Q-value slice 的圖 → 提示：X 軸是迷宮位置，Y 軸是在那個位置往右走的預期獎勵，越高代表越靠近終點】
-
-#### 收尾（3 分鐘）
-
-「**Bellman 的核心想法**：現在這個狀態的價值，等於立即獎勵加上未來最好結果的折扣版。每次更新都讓評估更準確一點點。」
-
-「這是強化學習最核心的數學，接下來都是這個基礎上蓋的。」
+"The heatmap *is* the Q-table — just visualized. It lets you see inside the agent's head: where it thinks is worth going, and where it doesn't. That kind of interpretability is rare in machine learning. Enjoy it while it lasts."
 
 ---
 
-### 🎯 T3：Maze 2D — Q-table 熱圖（30 分鐘）
+### ☕ Break (10 min)
 
-#### 引入（2 分鐘）
+"Alright, that's the first half of Day 1. Take ten minutes — water, bathroom, stretch."
 
-「剛才一維，現在二維。格子迷宮，上下左右都能走。」
+【離開講台，讓學生真正放鬆】
 
-「難在哪裡？**狀態空間變大了**。一維迷宮只有幾十個位置，二維迷宮有幾百個格子，每個格子要分別學一次。」
+---
 
-「等等你們會看到一張熱圖——**顏色越亮代表 AI 認為這個位置越有價值**，箭頭代表它認為在那裡最好往哪走。」
+## ══ Day 2 ══
 
-#### 播放示範影片（約 2 分鐘）
+---
 
-【播放 B3 影片】
-【連結：https://youtu.be/wFAx0JIwvZI】
+### 🟢 Opening (2 min)
+
+"Welcome back. Yesterday you did three tasks — MAB, Maze 1D, Maze 2D. Today we step up: **continuous state spaces**."
+
+"What does that mean? Yesterday's maze had discrete positions — a finite number of cells. Today's environments use **real-valued states**: position, velocity, angle — infinitely many possible values. How does the agent learn?"
+
+"The answer is **discretization**: slice the continuous space into bins, then apply the Q-table you already know. But the finer the bins, the more the agent has to learn. You'll feel that trade-off directly today."
+
+---
+
+### 🎯 T4 · Heli — Reading Training Curves (30 min)
+
+#### Intro (2 min)
+
+"Task 4 is a helicopter game — fly horizontally, dodge obstacles. **Five continuous state dimensions**: position, velocity, and so on."
+
+"The main focus today isn't just running the agent — it's **reading the training curve**. That graph of reward over episodes: what is it telling you? Is the agent improving? Plateauing? Oscillating?"
+
+#### 【播放影片】
+
+【播放 B4 影片：https://youtu.be/l7TCZ9fFzNY】
 
 【影片結束後】
 
-「T3 的任務：**在熱圖上描出從起點到終點的最佳路徑**。找顏色亮的格子，跟著箭頭走。」
+"**Task T4**: Run at least 50 episodes. Then describe the reward curve trend — rising, flat, or noisy? Give your best explanation for why it looks that way."
 
-「然後說明：哪些格子的 Q-value 比較高？為什麼？」
+"Rising = the agent is learning. Flat or noisy = it might need more time, or the parameters might need tuning."
 
-#### 學生操作（23 分鐘）
+#### 【學生操作，巡視 23 min】
 
-【這關訓練時間較長，約 30-60 秒。提醒學生等它跑完再看熱圖。】
+【訓練時間長，提醒學生耐心等待】
+【曲線很亂 → 正常。Look at the smoothed moving average, not individual points.】
+【鼓勵學生嘗試改 BINS 值（格子數），觀察學習速度差異】
 
-【常見問題：熱圖還沒出現 → 等跑完，輸出最下面那張圖才是熱圖】
-【進階挑戰：可以讓學生改 MAZE2D_LEVEL（迷宮難度），觀察路徑變化】
+#### Wrap-up (3 min)
 
-#### 收尾（2 分鐘）
-
-「**熱圖就是 Q-table 的視覺化**。它讓你看到 AI 內部的評估——哪裡值得去，哪裡不值得。這是機器學習裡少數能直接觀察內部邏輯的方法，很珍貴。」
-
----
-
-### ☕ 休息（10 分鐘）
-
-「好，第一天前半段結束，休息十分鐘。喝水、上廁所。十分鐘後繼續。」
-
-【離開講台讓學生休息，不要在台上準備下一段讓學生沒有真正放鬆的機會】
+"**The training curve is your diagnostic tool.** A flat curve doesn't mean failure — it might just need more episodes. A wild curve might mean the learning rate is too high. Reading these graphs is a skill, and you practiced it today."
 
 ---
 
-## ＝＝ 第二天 ＝＝
+### 🎯 T5 · Fighter — Optional Challenge (open-ended)
 
----
+#### Intro (2 min)
 
-### 🟢 開場（2 分鐘）
+"The last one: a fighter jet game. Shoot rocks, dodge them, survive. This is the hardest environment — **5-dimensional continuous state**, 4 actions, 5 difficulty modes."
 
-「好，第二天。昨天你們做了三個任務——MAB、一維迷宮、二維迷宮。今天進入**連續狀態空間**。」
+"This task is **optional**. If you haven't finished T4, keep working on that. If T4 is done, come try this."
 
-「什麼意思？昨天的迷宮，位置是整數，有限的幾十或幾百個格子。今天的遊戲，狀態是**連續的實數**——位置、速度、角度——無限可能，AI 要怎麼學？」
+#### 【播放影片】
 
-「答案是**離散化**：把連續空間切成格子，然後用昨天學過的 Q-table。但格子切得越細，要學的東西越多。這個 trade-off，等等你們會直接感受到。」
-
----
-
-### 🎯 T4：Heli — 閱讀訓練曲線（30 分鐘）
-
-#### 引入（2 分鐘）
-
-「T4 是一個直升機遊戲——上下飛，閃開障礙物。**5 個維度的連續狀態**：水平位置、垂直位置、速度等。」
-
-「這次的任務重點不是跑完就好，而是**看懂訓練曲線**——那條獎勵隨時間變化的圖，它在說什麼？」
-
-#### 播放示範影片（約 2 分鐘）
-
-【播放 B4 影片】
-【連結：https://youtu.be/l7TCZ9fFzNY】
+【播放 B5 影片：https://youtu.be/HptAgyrEcHE】
 
 【影片結束後】
 
-「T4 的任務：**跑 50 回合以上**，然後描述訓練曲線的趨勢——是在上升、持平、還是很雜亂？說明你的推測原因。」
+"No fixed requirement — **explore freely**. Try different values of FIGHTER_MODE. See how the agent's behavior changes across difficulty levels. If you notice something interesting, write it down."
 
-「曲線上升 = AI 在學習。持平或雜亂 = 可能還沒學到，或學到了但很難穩定。」
-
-#### 學生操作（23 分鐘）
-
-【注意：Heli 訓練會跑一段時間，提醒學生耐心等待。】
-【鼓勵學生改 BINS 參數（切割格子數），觀察學習速度的差異】
-
-【常見問題：「怎麼知道有沒有在學？」→ 看獎勵曲線的移動平均有沒有往上爬】
-
-#### 收尾（3 分鐘）
-
-「**訓練曲線是 RL 最重要的診斷工具**。曲線不動不代表失敗，可能只是需要更多時間；曲線在震盪可能代表學習率太高。讀圖是一種技能，今天你們練習了。」
+#### 【學生自由探索 15 min，走動個別聊觀察】
 
 ---
 
-### 🎯 T5：Fighter — 5D 狀態空間自由探索（選做）
+### 🎤 Closing Discussion (10 min)
 
-#### 引入（2 分鐘）
+【不需要投影，站台前即可】
 
-「最後一個，Fighter——飛機射擊遊戲。這是最難的環境。**5 個維度的狀態**、4 個動作、5 種難度模式。」
+"Before we wrap up, a few questions. No right answers — just think out loud."
 
-「這個是**選做**。T4 還沒完成的人繼續做 T4。T4 完成的人可以來挑戰這個。」
+"**How was this different from what you imagined AI learning would look like?**"
 
-#### 播放示範影片（約 2 分鐘）
+【等 2-3 個學生回答，追問：Why did you expect that?】
 
-【播放 B5 影片】
-【連結：https://youtu.be/HptAgyrEcHE】
+"**Which task do you think was hardest for the agent — and why?**"
 
-【影片結束後】
+【引導：state space size / sparse rewards / exploration difficulty】
 
-「沒有固定任務要求——**自由探索**。試不同的 FIGHTER_MODE，觀察 AI 在不同難度下學習的差異。有什麼發現，等等我們聊。」
+"Here's the bigger picture: everything you did this week — Q-table, Bellman updates, exploration vs exploitation — these are the same core ideas behind the systems you hear about in the news. Scale them up with deep neural networks, and you get the RLHF training that fine-tunes ChatGPT. You've touched the foundation."
 
-#### 學生操作（15 分鐘）
-
-【這段時間可以巡視、個別聊聊觀察結果，不需要統一節奏】
-
----
-
-### 🎤 收尾與問答（10 分鐘）
-
-「好，我們快到時間了。讓我問幾個問題，不需要標準答案，想到什麼說什麼。」
-
-「**今天做的這些任務，跟你想像中的 AI 學習有什麼不同？**」
-
-【等 2-3 個學生回答，不評判對錯，只追問「為什麼這樣覺得？」】
-
-「**如果你是這個 AI，你覺得哪個任務最難學？**」
-
-【引導學生想到：狀態空間大、探索困難、延遲獎勵等概念】
-
-「好，最後說一件事：你們剛才做的，是**真實強化學習研究的縮小版**。Q-table、Bellman 更新、探索-利用 trade-off——這些都是現在 DeepMind、OpenAI 在用的核心概念，只是更大、更複雜。今天你們摸過了起點。」
-
-「謝謝你們。助教會收表，有問題可以繼續問。」
+"Thank you. The TA will collect the forms. Feel free to ask questions before you leave."
 
 【下課】
 
 ---
 
-## 📎 附錄：影片連結快速索引
+## 📎 Video Links
 
-| 任務 | 主題 | YouTube 連結 |
-|------|------|-------------|
-| B1 | MAB — 探索 vs 利用 | https://youtu.be/GbpV4j7cR-Y |
-| B2 | Maze 1D — SAR + Q-table | https://youtu.be/WRCE0S4DbZg |
-| B3 | Maze 2D — Q-table 熱圖 | https://youtu.be/wFAx0JIwvZI |
-| B4 | Heli — 訓練曲線 | https://youtu.be/l7TCZ9fFzNY |
-| B5 | Fighter — 自由探索（選做） | https://youtu.be/HptAgyrEcHE |
+| Task | Topic | Link |
+|------|-------|------|
+| B1 | MAB — Exploration vs Exploitation | https://youtu.be/GbpV4j7cR-Y |
+| B2 | Maze 1D — SAR & Q-table | https://youtu.be/WRCE0S4DbZg |
+| B3 | Maze 2D — Q-table Heatmap | https://youtu.be/wFAx0JIwvZI |
+| B4 | Heli — Training Curves | https://youtu.be/l7TCZ9fFzNY |
+| B5 | Fighter — Optional | https://youtu.be/HptAgyrEcHE |
 
 ---
 
-## 📎 附錄：緊急狀況處理
+## 📎 Troubleshooting
 
-| 狀況 | 處理方式 |
-|------|----------|
-| Jupyter 無法啟動 | 請助教幫忙用 `jupyter notebook` 重開；確認在正確的資料夾 |
-| 格子跑不出結果 | 確認有按 Shift+Enter；確認 kernel 不是 `[*]` 在等前一格跑完 |
-| 套件沒裝 | `!pip install gymnasium matplotlib numpy` 在第一格執行 |
-| 訓練跑太久 | 減少 EPISODES 數量（預設可能 200，先試 50）|
-| 熱圖/圖表沒出現 | 等前一格跑完，圖會出現在格子下方輸出區 |
-| 學生問「這能做什麼？」| 「現在你看的這個原理，用深度神經網路放大，就是 ChatGPT 的 RLHF 訓練在做的事。」|
+| Problem | Fix |
+|---------|-----|
+| Jupyter won't start | 請助教用 `jupyter notebook` 重開；確認在正確資料夾 |
+| Cell won't run | 確認按 Shift+Enter；確認前一格 [*] 已跑完 |
+| Missing packages | Run `!pip install gymnasium matplotlib numpy` in the first cell |
+| Training is slow | Reduce EPISODES (try 50 first) |
+| Plot doesn't appear | 等 kernel 完成（cell 左側從 [*] 變成 [數字]） |
+| "What's the real-world use?" | "This is the same algorithm, scaled up with neural nets, that trains ChatGPT's RLHF layer." |

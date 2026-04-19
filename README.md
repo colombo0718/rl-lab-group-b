@@ -41,7 +41,7 @@ Fill this out **before** the class begins.
 ---
 
 ### 4 · MAB — Multi-Armed Bandit
-▶ [Watch Demo B1](#) *(link pending)*
+▶ [Watch Demo B1](https://youtu.be/GbpV4j7cR-Y)
 
 | Task | |
 |------|---|
@@ -55,7 +55,7 @@ Fill this out **before** the class begins.
 ---
 
 ### 6 · Maze 1D
-▶ [Watch Demo B2](#) *(link pending)*
+▶ [Watch Demo B2](https://youtu.be/WRCE0S4DbZg)
 
 | Task | |
 |------|---|
@@ -72,7 +72,7 @@ Fill this out **before** the class begins.
 ## Day 2
 
 ### 8 · Maze 2D — Deep Dive
-▶ [Watch Demo B3](#) *(link pending)*
+▶ [Watch Demo B3](https://youtu.be/wFAx0JIwvZI)
 
 | Environment | Link |
 |---|---|
@@ -91,7 +91,7 @@ Fill this out **before** the class begins.
 ---
 
 ### 10 · Heli — Helicopter
-▶ [Watch Demo B4](#) *(link pending)*
+▶ [Watch Demo B4](https://youtu.be/l7TCZ9fFzNY)
 
 | Task | |
 |------|---|
@@ -105,7 +105,7 @@ Fill this out **before** the class begins.
 ---
 
 ### 12 · Fighter *(optional challenge)*
-▶ [Watch Demo B5](#) *(link pending)*
+▶ [Watch Demo B5](https://youtu.be/HptAgyrEcHE)
 
 ---
 
