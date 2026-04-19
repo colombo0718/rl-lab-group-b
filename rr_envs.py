@@ -509,25 +509,39 @@ class Maze1DEnv(gym.Env):
 
 class Maze2DEnv(gym.Env):
     """
-    2D Maze — 10×10 grid. Start: (0, 0). Goal: (9, 9).
+    2D Maze. Start: (0, 0).
 
     Reward (matches RR Maze2D.html):
-        Reach (9,9) : +10, done
+        Reach goal : +10, done
         All other steps : 0
 
-    State: [x, y] grid coordinates (0–9 each).
+    State: [x, y] grid coordinates.
 
     Actions:
         0 = stay  |  1 = up  |  2 = down  |  3 = left  |  4 = right
+
+    Levels (match RR Maze2D level selector):
+        0 = Open Field  — 10×10 grid, goal (9, 9)
+        1 = Walled In   —  5×5 grid, goal (4, 4), faster convergence
     """
 
-    def __init__(self):
+    _LEVELS = {
+        0: {"grid_size": 10, "goal": (9, 9), "name": "Open Field"},
+        1: {"grid_size": 5,  "goal": (4, 4), "name": "Walled In"},
+    }
+
+    def __init__(self, level: int = 0):
         super().__init__()
-        self.grid_size = 10
+        assert level in self._LEVELS, f"level must be one of {list(self._LEVELS)}"
+        cfg = self._LEVELS[level]
+        self.level      = level
+        self.grid_size  = cfg["grid_size"]
+        self.goal       = cfg["goal"]
+        self.level_name = cfg["name"]
 
         self.observation_space = spaces.Box(
             low=np.array([0, 0], dtype=np.float32),
-            high=np.array([9, 9], dtype=np.float32),
+            high=np.array([self.grid_size - 1, self.grid_size - 1], dtype=np.float32),
         )
         self.action_space = spaces.Discrete(5)
 
@@ -537,31 +551,34 @@ class Maze2DEnv(gym.Env):
         return np.array([self.x, self.y], dtype=np.float32), {}
 
     def step(self, action: int):
-        if action == 1 and self.y < self.grid_size - 1:
+        g = self.grid_size - 1
+        if action == 1 and self.y < g:
             self.y += 1
         elif action == 2 and self.y > 0:
             self.y -= 1
         elif action == 3 and self.x > 0:
             self.x -= 1
-        elif action == 4 and self.x < self.grid_size - 1:
+        elif action == 4 and self.x < g:
             self.x += 1
 
-        done = (self.x == 9 and self.y == 9)
+        done = (self.x, self.y) == self.goal
         reward = 10.0 if done else 0.0
         return np.array([self.x, self.y], dtype=np.float32), reward, done, False, {}
+
     def render(self):
         """Render the 2D maze with colorful RR-style symbols."""
-        fig, ax = _blank_axes(figsize=(6, 6), xlim=(0, self.grid_size), ylim=(0, self.grid_size))
-        _ui_text(ax, 0, 10.35, "Maze2D route", ha="left", va="center", fontsize=14, fontweight="bold")
+        g = self.grid_size
+        fig, ax = _blank_axes(figsize=(6, 6), xlim=(0, g), ylim=(0, g))
+        _ui_text(ax, 0, g + 0.35, f"Maze2D  level={self.level} ({self.level_name})",
+                 ha="left", va="center", fontsize=14, fontweight="bold")
 
-        for x in range(self.grid_size):
-            for y in range(self.grid_size):
-                face = "#ffffff"
-                if x == 9 and y == 9:
-                    face = "#def7e5"
+        gx, gy = self.goal
+        for x in range(g):
+            for y in range(g):
+                face = "#def7e5" if (x, y) == self.goal else "#ffffff"
                 ax.add_patch(patches.Rectangle((x, y), 1, 1, linewidth=0.8, edgecolor="#555555", facecolor=face))
 
-        _draw_trophy_icon(ax, 9.5, 9.5, size=0.58)
+        _draw_trophy_icon(ax, gx + 0.5, gy + 0.5, size=0.58)
         _draw_person_icon(ax, self.x + 0.5, self.y + 0.5, size=0.58)
         return _figure_to_rgb_array(fig)
 
@@ -977,28 +994,32 @@ def _maze1d_render_html(self) -> str:
 
 
 def _maze2d_render_html(self) -> str:
+    g = self.grid_size
+    cell_px = 42
+    gx, gy = self.goal
     cells = []
-    for y in reversed(range(self.grid_size)):
-        for x in range(self.grid_size):
+    for y in reversed(range(g)):
+        for x in range(g):
             icon = ""
             bg = "#fff"
-            if x == 9 and y == 9:
+            if (x, y) == self.goal:
                 icon = "🏆"
                 bg = "#def7e5"
             if x == self.x and y == self.y:
                 icon = "🧑"
                 bg = "#d3f9d8"
             cells.append(f"""
-            <div style="width:42px; height:42px; display:flex; align-items:center; justify-content:center;
+            <div style="width:{cell_px}px; height:{cell_px}px; display:flex; align-items:center; justify-content:center;
                         border:1px solid #555; background:{bg}; font-size:30px; box-sizing:border-box;">{icon}</div>
             """)
 
+    grid_w = g * cell_px
     body = f"""
-    <div style="display:grid; grid-template-columns:repeat(10, 42px); grid-template-rows:repeat(10, 42px);
-                width:420px; height:420px;">{''.join(cells)}</div>
-    <div style="font-size:13px; color:#555; margin-top:8px;">state=({self.x}, {self.y}) · goal=(9, 9)</div>
+    <div style="display:grid; grid-template-columns:repeat({g}, {cell_px}px); grid-template-rows:repeat({g}, {cell_px}px);
+                width:{grid_w}px; height:{grid_w}px;">{''.join(cells)}</div>
+    <div style="font-size:13px; color:#555; margin-top:8px;">state=({self.x}, {self.y}) · goal={self.goal} · level={self.level} ({self.level_name})</div>
     """
-    return _rr_html_shell("2D Maze", body, width="430px")
+    return _rr_html_shell("2D Maze", body, width=f"{grid_w + 10}px")
 
 
 def _heli_render_html(self) -> str:
