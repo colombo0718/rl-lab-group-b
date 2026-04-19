@@ -10,7 +10,7 @@ Follow the steps **in order** during each class session.
 
 | | |
 |---|---|
-| 📝 Pre-test | [Open Form](https://docs.google.com/forms/d/e/1FAIpQLSe5YRnWo3_LvMeY2SMIH2aWcCHqlKeVQ-MnomDkF7_UfmjQpw/viewform) |
+| 📝 Pre-test | [Open Form](https://docs.google.com/forms/d/e/1FAIpQLSd3ar316tJrs23D814NVhzUeOFib5CZSf24Zg5FcQ5Nv-Gomg/viewform) |
 
 Fill this out **before** the class begins.
 
@@ -113,7 +113,7 @@ Fill this out **before** the class begins.
 
 | | |
 |---|---|
-| 📝 Post-test | [Open Form](https://docs.google.com/forms/d/e/1FAIpQLSeFZVhhsdw2OnFYRc1lSmJutpAliz5Z1sgw7UW5KG_juJpXsQ/viewform) |
+| 📝 Post-test | [Open Form](https://docs.google.com/forms/d/e/1FAIpQLSfJtAD6c3u5QMT9JugE1NOakIVkNfMcBzgebkDIyGjLIMB4-w/viewform) |
 
 Fill this out **before leaving** the classroom.
 
