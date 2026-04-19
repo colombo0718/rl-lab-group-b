@@ -1062,7 +1062,7 @@ FighterEnv.render_html = _fighter_render_html
 # ─────────────────────────────────────────────────────────────
 
 def run_q_learning(env, alpha=0.5, gamma=0.95, epsilon=0.2,
-                   n_episodes=500, bins=None, verbose=True):
+                   n_episodes=500, bins=None, verbose=True, max_steps=2000):
     """
     Run tabular Q-learning on any rr_envs environment.
 
@@ -1108,7 +1108,7 @@ def run_q_learning(env, alpha=0.5, gamma=0.95, epsilon=0.2,
         steps   = 0
         done    = False
 
-        while not done:
+        while not done and steps < max_steps:
             if np.random.random() < epsilon:
                 action = env.action_space.sample()
             else:
@@ -1187,6 +1187,39 @@ def plot_maze2d_qtable(Q, bins=6):
     ax.set_xlabel("X bin (→ east)")
     ax.set_ylabel("Y bin (↑ north)")
     ax.set_title("Maze2D Q-Table — Best Action per State\n(color = confidence, arrow = preferred direction)")
+    plt.tight_layout()
+    plt.show()
+
+
+def plot_maze1d_qtable(Q, grid_size=10):
+    """
+    Q-Value Slice for Maze1D: bar chart of best Q-value per state position.
+    Equivalent to the Q-Value Slice line chart on the RR platform.
+    """
+    action_name = {0: "stay", 1: "right", 2: "left"}
+    states = list(range(grid_size))
+    best_vals = [max(Q.get((s, a), 0.0) for a in range(3)) for s in states]
+    best_acts = [max(range(3), key=lambda a: Q.get((s, a), 0.0)) for s in states]
+
+    colors = ["#e03131" if v < 0 else "#2f9e44" if v > 0 else "#ced4da" for v in best_vals]
+    labels = ["💣" if s == 0 else "🏆" if s == grid_size - 1 else str(s) for s in states]
+
+    fig, ax = plt.subplots(figsize=(10, 4))
+    ax.bar(states, best_vals, color=colors, edgecolor="white", linewidth=0.8, zorder=3)
+    ax.axhline(0, color="#333333", linewidth=1.2)
+
+    for s, v, a in zip(states, best_vals, best_acts):
+        if v != 0:
+            ax.text(s, v + (0.3 if v >= 0 else -0.3), action_name[a],
+                    ha="center", va="bottom" if v >= 0 else "top", fontsize=9, color="#333333")
+
+    ax.set_xticks(states)
+    ax.set_xticklabels(labels, fontsize=12)
+    ax.set_xlabel("State (position)")
+    ax.set_ylabel("Max Q-value")
+    ax.set_title("Q-Value Slice — Best value per state position\n"
+                 "Green = positive (goal direction)  |  Red = negative (bomb direction)  |  Grey = not yet learned")
+    ax.grid(True, axis="y", alpha=0.3, zorder=0)
     plt.tight_layout()
     plt.show()
 
