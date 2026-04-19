@@ -1057,7 +1057,7 @@ def _fighter_render_html(self) -> str:
       <div style="position:absolute; left:{self.LANE_MIN}px; top:0; width:1px; height:{self.CANVAS_H}px; background:#999;"></div>
       <div style="position:absolute; left:{self.LANE_MAX}px; top:0; width:1px; height:{self.CANVAS_H}px; background:#999;"></div>
       <div style="position:absolute; left:{self.rock['x'] - 18}px; top:{self.rock['y'] - 18}px; font-size:34px; line-height:1;">🪨</div>
-      <div style="position:absolute; left:{self.player_x - 22}px; top:{self.PLAYER_Y - 22}px; font-size:40px; line-height:1; transform:rotate(-90deg);">✈️</div>
+      <div style="position:absolute; left:{self.player_x - 22}px; top:{self.PLAYER_Y - 22}px; font-size:40px; line-height:1; transform:rotate(-45deg);">✈️</div>
       {bullet}
     </div>
     <div style="font-size:13px; color:#555; margin-top:8px;">hits={self.hits}/{self.CLEAR_HITS} · mode={self.mode}</div>
