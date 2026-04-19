@@ -11,29 +11,33 @@
 
 ---
 
-### 🟢 Opening (3 min)
+### 🟢 Opening (5 min)
 
 【站到講台正中，等學生安靜，環視一圈再開口】
 
-"Alright, let's get started."
+"Hello everyone. My name is **Colombo Chao** — you can call me Colombo. I'm a graduate researcher here, and today I'll be your instructor for this two-day lab."
 
-"I know most of you have never studied reinforcement learning before — you might not even be sure what today is about. That's completely fine. By the end of these two days, you'll have actually *run* an AI learning process from scratch. Not watching someone else do it — you'll do it yourself."
+"What we're doing is **reinforcement learning** — a branch of AI where an agent learns by interacting with an environment, trial and error, reward and punishment. It's the same family of techniques behind AlphaGo, robot control, and parts of how ChatGPT was trained."
 
-"This course is also part of my research. Your work, your completion times, your observations — they're all data for my thesis. So please take each task seriously. What you do here genuinely matters."
+"I know most of you have never studied this before. That's completely fine. By the end of these two days, you'll have actually *run* an AI learning process from scratch. Not watching someone else do it — you, hands on."
+
+"This is also part of my research. Your work and observations are data for my thesis. So please take each task seriously — what you do here genuinely matters."
 
 【停頓兩秒】
 
-"Okay. Let's go."
+"Alright. Let's go."
 
 ---
 
 ### 📋 Course Overview (2 min)
 
-【白板寫：Day 1 → T1 / T2 / T3 ｜ Day 2 → T4 / T5】
+【開瀏覽器，投到大螢幕，打開 rl-lab-group-b 的 README 頁面】
+
+"This is your guide for today and tomorrow — everything is here. Follow it top to bottom."
 
 "Two days, five tasks. For each one, I'll play a short demo video, then you do the task yourself. When you're done, raise your hand — the TA will come check your work."
 
-"You don't need to write any code today. You'll change a few numbers, run the cells, and observe what happens. But I want you to actually *think* about why the result looks the way it does."
+"You don't need to write any code. You'll change a few numbers, run the cells, and observe what happens. But I want you to actually *think* about why the result looks the way it does."
 
 "Questions go to the TA, or raise your hand for me. No question is a stupid one."
 
