@@ -248,7 +248,7 @@
 
 #### 【播放影片】
 
-【播放 B5 影片：https://youtu.be/HptAgyrEcHE】
+【播放 B5 影片：https://youtu.be/BzPVMk7DuqE】
 
 【影片結束後】
 
@@ -288,7 +288,7 @@
 | B2 | Maze 1D — SAR & Q-table | https://youtu.be/WRCE0S4DbZg |
 | B3 | Maze 2D — Q-table Heatmap | https://youtu.be/wFAx0JIwvZI |
 | B4 | Heli — Training Curves | https://youtu.be/l7TCZ9fFzNY |
-| B5 | Fighter — Optional | https://youtu.be/HptAgyrEcHE |
+| B5 | Fighter — Optional | https://youtu.be/BzPVMk7DuqE |
 
 ---
 

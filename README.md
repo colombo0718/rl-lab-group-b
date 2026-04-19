@@ -105,7 +105,7 @@ Fill this out **before** the class begins.
 ---
 
 ### 12 · Fighter *(optional challenge)*
-▶ [Watch Demo B5](https://youtu.be/HptAgyrEcHE)
+▶ [Watch Demo B5](https://youtu.be/BzPVMk7DuqE)
 
 ---
 
