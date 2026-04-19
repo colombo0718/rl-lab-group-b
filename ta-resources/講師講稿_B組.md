@@ -11,31 +11,24 @@
 
 ---
 
-### 🟢 Opening (5 min)
+### 🖥️ Slide 1 — Title (1 min)
 
+【開 slides_B組.html，全螢幕投影。第 1 張：標題頁】
 【站到講台正中，等學生安靜，環視一圈再開口】
 
-"Hello everyone. My name is **Colombo Chao** — you can call me Colombo. I'm a graduate researcher here, and today I'll be your instructor for this two-day lab."
-
-"What we're doing is **reinforcement learning** — a branch of AI where an agent learns by interacting with an environment, trial and error, reward and punishment. It's the same family of techniques behind AlphaGo, robot control, and parts of how ChatGPT was trained."
-
-"I know most of you have never studied this before. That's completely fine. By the end of these two days, you'll have actually *run* an AI learning process from scratch. Not watching someone else do it — you, hands on."
+"Hello everyone. My name is **Colombo Chao** — you can call me Colombo. I'm a graduate researcher at Yuan Ze University, and today I'll be your instructor for this two-day lab."
 
 "This is also part of my research. Your work and observations are data for my thesis. So please take each task seriously — what you do here genuinely matters."
 
-【停頓兩秒】
-
-"Alright. Let's go."
-
 ---
 
-### 📋 Course Overview (2 min)
+### 🖥️ Slide 2 — Course Overview (2 min)
 
-【開瀏覽器，投到大螢幕，打開 rl-lab-group-b 的 README 頁面】
+【按 → 切到第 2 張：兩天課程結構】
 
-"This is your guide for today and tomorrow — everything is here. Follow it top to bottom."
+"Two days, five tasks. The structure is on the screen."
 
-"Two days, five tasks. For each one, I'll play a short demo video, then you do the task yourself. When you're done, raise your hand — the TA will come check your work."
+"For each task: I'll play a short demo video, then you do it yourself. When you're done, raise your hand — the TA will come check your work."
 
 "You don't need to write any code. You'll change a few numbers, run the cells, and observe what happens. But I want you to actually *think* about why the result looks the way it does."
 
@@ -43,13 +36,56 @@
 
 ---
 
-### 📌 Environment Check (3 min)
+### 🖥️ Slide 3 — Poll (2 min)
 
-【請助教確認每人可以開啟 Jupyter Notebook / Colab】
+【按 → 切到第 3 張：互動提問頁】
 
-"Please open your Jupyter Notebook and make sure RL_Day1.ipynb is loaded. You should see the Jupyter logo at the top and a few code cells below. If anything isn't loading, raise your hand now."
+"Before we dive in — quick question."
 
-【等 2 分鐘確認全員就緒】
+"Have you ever studied reinforcement learning before? Raise your hand if yes."
+
+【停，數一下舉手的人，點評】
+
+"Okay. How about — heard of it, but never actually tried it?"
+
+【停，數一下】
+
+"And completely new to the topic?"
+
+【停】
+
+"Perfect. That's exactly the range I expected. Whether you've seen this before or not — today's format is hands-on, so everyone will be starting from the same place operationally."
+
+---
+
+### 🖥️ Slide 4 — What is RL? (2 min)
+
+【按 → 切到第 4 張：Agent / Environment 圖】
+
+"Here's the core idea — one picture, one sentence."
+
+"There's an **agent** — the learner. There's an **environment** — the world it operates in. The agent takes an **action**, the environment responds with a new **state** and a **reward**. The agent uses that feedback to decide what to do next."
+
+"That loop — action, feedback, adjust — repeated thousands of times, is how reinforcement learning works."
+
+"Every task today is a version of this loop. You'll see it in action."
+
+---
+
+### 🖥️ Slide 5 — Repo + Environment Setup (3 min)
+
+【按 → 切到第 5 張：QR code 頁】
+
+"Alright — scan this QR code, or type the URL. This GitHub page is your guide for both days."
+
+【等學生掃碼或打 URL，助教協助確認】
+
+"Once you're on the page — open the Colab or Binder link under Section 2. Make sure RL_Day1.ipynb loads and you can see the code cells."
+
+【等 90 秒，確認全員就緒。有問題的讓助教處理。】
+【關閉投影片，後續直接在 README 頁面上操作】
+
+"Good. Keep that page open — you'll use it all day."
 
 ---
 
