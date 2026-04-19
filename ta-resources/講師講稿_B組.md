@@ -152,13 +152,33 @@
 
 ---
 
+### ☕ Break (10 min)
+
+"Alright, that's Day 1. Take ten minutes — water, bathroom, stretch."
+
+【離開講台，讓學生真正放鬆】
+
+---
+
+## ══ Day 2 ══
+
+---
+
+### 🟢 Opening (2 min)
+
+"Welcome back. Last week you covered two tasks — MAB and Maze 1D. Today we go 2D, then up to continuous state spaces."
+
+"The progression is: a 2D maze first, to consolidate the Q-table and heatmap concept — then helicopter and fighter, where the state space becomes infinite. Each step builds on the last."
+
+---
+
 ### 🎯 T3 · Maze 2D — Q-table Heatmap (30 min)
 
 #### Intro (2 min)
 
-"Now we go 2D. A grid maze — the agent can move up, down, left, right."
+"First task today: a 2D maze. The agent can move up, down, left, right."
 
-"Why is this harder? **The state space is much larger.** A 1D maze had maybe 20 positions. A 2D maze has hundreds of cells, and each one needs to be learned separately."
+"Why is this harder than Maze 1D? **The state space is much larger.** A 1D maze had maybe 20 positions. A 2D maze has hundreds of cells, and each one needs to be learned separately."
 
 "After training, you'll see a **heatmap**: brighter color means the agent thinks that cell is more valuable. Arrows show the preferred action at each cell."
 
@@ -180,27 +200,11 @@
 
 "The heatmap *is* the Q-table — just visualized. It lets you see inside the agent's head: where it thinks is worth going, and where it doesn't. That kind of interpretability is rare in machine learning. Enjoy it while it lasts."
 
----
+"Now we step up: **continuous state spaces**."
 
-### ☕ Break (10 min)
+"What does that mean? This maze had discrete positions — a finite number of cells. The next environments use **real-valued states**: position, velocity, angle — infinitely many possible values. How does the agent learn?"
 
-"Alright, that's the first half of Day 1. Take ten minutes — water, bathroom, stretch."
-
-【離開講台，讓學生真正放鬆】
-
----
-
-## ══ Day 2 ══
-
----
-
-### 🟢 Opening (2 min)
-
-"Welcome back. Yesterday you did three tasks — MAB, Maze 1D, Maze 2D. Today we step up: **continuous state spaces**."
-
-"What does that mean? Yesterday's maze had discrete positions — a finite number of cells. Today's environments use **real-valued states**: position, velocity, angle — infinitely many possible values. How does the agent learn?"
-
-"The answer is **discretization**: slice the continuous space into bins, then apply the Q-table you already know. But the finer the bins, the more the agent has to learn. You'll feel that trade-off directly today."
+"The answer is **discretization**: slice the continuous space into bins, then apply the Q-table you already know. But the finer the bins, the more the agent has to learn. You'll feel that trade-off directly."
 
 ---
 
