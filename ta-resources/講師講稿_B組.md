@@ -11,22 +11,6 @@
 
 ---
 
-### 📝 前測 — Pre-test (10 min)
-
-【學生入座後，上課前進行。助教協助確認每人都有填寫。】
-
-"Before we start — please take out your phone or open a browser. Scan the QR code on the screen, or type this link."
-
-【投影或寫白板：https://docs.google.com/forms/d/e/1FAIpQLSd3ar316tJrs23D814NVhzUeOFib5CZSf24Zg5FcQ5Nv-Gomg/viewform】
-
-"This is a short questionnaire — about 5 to 10 minutes. There are no right or wrong answers. We just want to know your background before the lab. Please be honest — this is anonymous and only used for research."
-
-【等學生填寫，走動確認。助教計時，約 8 分鐘後提醒收尾。】
-
-"Take your time. Once you're done, just stay on the page — we'll start the lab right after."
-
----
-
 ### 🖥️ Slide 1 — Title (1 min)
 
 【開 slides_B組.html，全螢幕投影。第 1 張：標題頁】
@@ -102,6 +86,21 @@
 【關閉投影片，後續直接在 README 頁面上操作】
 
 "Good. Keep that page open — you'll use it all day."
+
+---
+
+### 📝 前測 — Pre-test (10 min)
+
+【投影或寫白板：https://docs.google.com/forms/d/e/1FAIpQLSd3ar316tJrs23D814NVhzUeOFib5CZSf24Zg5FcQ5Nv-Gomg/viewform】
+【助教協助確認每人都有填寫。】
+
+"Before we dive in — one quick thing. Please take out your phone or open a new tab and fill out this short questionnaire."
+
+"About 5 to 10 minutes. No right or wrong answers — we just want to know your background before the lab starts. It's anonymous and only used for research."
+
+【等學生填寫，走動確認。助教計時，約 8 分鐘後提醒收尾。】
+
+"Take your time. Once you're done, we'll get started."
 
 ---
 
