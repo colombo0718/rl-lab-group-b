@@ -89,6 +89,16 @@
 
 ---
 
+### 📺 V0 · What is RL — SAR Loop & Episode
+
+【播放 V0：https://www.youtube.com/watch?v=g5SFtsTAv4I】
+
+【影片結束後說】
+
+"That's the core loop you'll see in every task today: the agent observes a **State**, takes an **Action**, and receives a **Reward**. One full run — from start to a terminal condition — is called an **episode**. Everything we do today and tomorrow builds on this loop."
+
+---
+
 ### 🎯 T1 · MAB — Multi-Armed Bandit (25 min)
 
 #### Intro (2 min)
@@ -97,7 +107,15 @@
 
 "Imagine you walk into a casino. There are many slot machines, but you don't know which one pays out the most. How do you decide whether to keep playing the same machine, or try a different one? That tension — between **exploiting** what you already know and **exploring** what you don't — is one of the most fundamental problems in reinforcement learning."
 
-#### 【播放影片】
+#### 【播放 V1 影片】
+
+【播放 V1：https://www.youtube.com/watch?v=GrPdk2d9KVA】
+
+【影片結束後說】
+
+"Three parameters to know. **ε** — epsilon — controls how often the agent explores versus sticking with what it already knows. **α** — learning rate — controls how fast Q-values update each step. **γ** — discount factor — controls how much future reward matters compared to immediate reward. For this task, ε is your main variable. The other two will come up naturally as we go."
+
+#### 【播放 B1 影片】
 
 【全螢幕播放 B1 影片：https://youtu.be/GbpV4j7cR-Y】
 
@@ -131,7 +149,15 @@
 
 "Every step produces three things: a **State**, an **Action**, and a **Reward** — S, A, R. You'll see them printed in the output. Your job is to recognize them."
 
-#### 【播放影片】
+#### 【播放 V2 影片】
+
+【播放 V2：https://www.youtube.com/watch?v=lwEo9spItjs】
+
+【影片結束後說】
+
+"So the Q-table is the agent's memory — one value for every state-action pair. The **Bellman update** is the rule: each step, nudge that value a little closer to what actually happened — immediate reward plus discounted future value. Enough steps, and the whole table converges. Now watch the demo and look for this process happening live."
+
+#### 【播放 B2 影片】
 
 【播放 B2 影片：https://youtu.be/WRCE0S4DbZg】
 
@@ -149,6 +175,16 @@
 #### Wrap-up (3 min)
 
 "**The Bellman equation** is the engine of Q-learning. Every step nudges the Q-value a little closer to the truth. Run enough steps, and the table converges. Everything else in RL — including deep neural networks — is built on this idea."
+
+---
+
+### 📺 V3 · Reading the Q-table Heatmap *(Day 2 preview)*
+
+【播放 V3：https://www.youtube.com/watch?v=Sesod0K4wjc】
+
+【影片結束後說】
+
+"Tomorrow you'll build one of these yourself in the 2D maze. **Bright cells** mean the agent has learned that position leads to reward. **Arrows** show the preferred direction. Keep that picture in mind — that's what we're building toward on Day 2."
 
 ---
 
@@ -216,7 +252,15 @@
 
 "The main focus today isn't just running the agent — it's **reading the training curve**. That graph of reward over episodes: what is it telling you? Is the agent improving? Plateauing? Oscillating?"
 
-#### 【播放影片】
+#### 【播放 V4 影片】
+
+【播放 V4：https://www.youtube.com/watch?v=6crIH-kT-bA】
+
+【影片結束後說】
+
+"Three patterns to recognize: **rising** — the agent is learning. **Flat** — it's plateaued, might need more episodes or a lower learning rate. **Noisy or oscillating** — something's unstable, maybe ε or α is too high. Your job this task: describe which pattern you see and give your best explanation for why."
+
+#### 【播放 B4 影片】
 
 【播放 B4 影片：https://youtu.be/l7TCZ9fFzNY】
 
@@ -246,7 +290,15 @@
 
 "This task is **optional**. If you haven't finished T4, keep working on that. If T4 is done, come try this."
 
-#### 【播放影片】
+#### 【播放 V5 影片】
+
+【播放 V5：https://www.youtube.com/watch?v=Z67UnKtgBH4】
+
+【影片結束後說】
+
+"The key idea: a continuous state space has infinitely many values — too many to put in a Q-table directly. So we **discretize**: chop the continuous range into bins, treat each bin as a discrete state. Fewer bins = faster to learn, coarser resolution. More bins = precise, but the agent needs far more episodes. Fighter is where you feel that trade-off directly."
+
+#### 【播放 B5 影片】
 
 【播放 B5 影片：https://youtu.be/BzPVMk7DuqE】
 
