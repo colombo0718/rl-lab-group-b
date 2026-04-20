@@ -11,6 +11,22 @@
 
 ---
 
+### 📝 前測 — Pre-test (10 min)
+
+【學生入座後，上課前進行。助教協助確認每人都有填寫。】
+
+"Before we start — please take out your phone or open a browser. Scan the QR code on the screen, or type this link."
+
+【投影或寫白板：https://docs.google.com/forms/d/e/1FAIpQLSd3ar316tJrs23D814NVhzUeOFib5CZSf24Zg5FcQ5Nv-Gomg/viewform】
+
+"This is a short questionnaire — about 5 to 10 minutes. There are no right or wrong answers. We just want to know your background before the lab. Please be honest — this is anonymous and only used for research."
+
+【等學生填寫，走動確認。助教計時，約 8 分鐘後提醒收尾。】
+
+"Take your time. Once you're done, just stay on the page — we'll start the lab right after."
+
+---
+
 ### 🖥️ Slide 1 — Title (1 min)
 
 【開 slides_B組.html，全螢幕投影。第 1 張：標題頁】
@@ -327,6 +343,22 @@
 "Here's the bigger picture: everything you did this week — Q-table, Bellman updates, exploration vs exploitation — these are the same core ideas behind the systems you hear about in the news. Scale them up with deep neural networks, and you get the RLHF training that fine-tunes ChatGPT. You've touched the foundation."
 
 "Thank you. The TA will collect the forms. Feel free to ask questions before you leave."
+
+---
+
+### 📝 後測 — Post-test (15 min)
+
+【Closing Discussion 結束後，請學生填寫後測，填完再離開。】
+
+"Last thing before you go — please fill out the post-test questionnaire. Same drill: scan the QR code or type the link."
+
+【投影或寫白板：https://docs.google.com/forms/d/e/1FAIpQLSfJtAD6c3u5QMT9JugE1NOakIVkNfMcBzgebkDIyGjLIMB4-w/viewform】
+
+"This one is a bit longer — about 10 to 15 minutes. It covers what you learned today, and your experience with the platform. Again, no right or wrong answers. Your honest feedback helps the research."
+
+【在場等候，回答個別問題。助教確認每人送出表單後才放行。】
+
+"Please don't leave until you've submitted. The TA will come check."
 
 【下課】
 
