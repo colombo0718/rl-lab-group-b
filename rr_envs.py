@@ -318,11 +318,8 @@ class MABEnv(gym.Env):
 
     def reset(self, seed=None, options=None):
         super().reset(seed=seed)
-        if not hasattr(self, "_episode_count"):
-            self._episode_count = 0
-        if not hasattr(self, "machine_pools") or seed is not None or self._episode_count % 100 == 0:
+        if not hasattr(self, "machine_pools") or seed is not None:
             self._setup_pools()
-        self._episode_count += 1
         self.selected = 0
         self.step_count = 0
         self.displayed_rewards = ["?"] * self.n_machines
