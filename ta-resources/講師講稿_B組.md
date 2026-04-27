@@ -222,7 +222,7 @@
 
 "After training, you'll see a **heatmap**: brighter color means the agent thinks that cell is more valuable. Arrows show the preferred action at each cell."
 
-#### 【播放影片】
+#### 【播放 B3 影片】
 
 【播放 B3 影片：https://youtu.be/wFAx0JIwvZI】
 
@@ -308,7 +308,9 @@
 
 【影片結束後】
 
-"No fixed requirement — **explore freely**. Try different values of FIGHTER_MODE. See how the agent's behavior changes across difficulty levels. If you notice something interesting, write it down."
+"Notice that all the parameters in this cell start at zero. **You need to fill them in yourself** before you can run anything. That's the point — think about what each one should be."
+
+"No required answer — **explore freely**. Try different values of `FIGHTER_MODE`. See how the agent's behavior changes across difficulty levels. If you notice something interesting, write it down."
 
 #### 【學生自由探索 15 min，走動個別聊觀察】
 
